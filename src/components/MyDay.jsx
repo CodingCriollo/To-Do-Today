@@ -1,5 +1,3 @@
-import '../styles/MyDay.css';
-
 const MyDay = () => {
   const date = new Date();
 
@@ -27,10 +25,10 @@ const MyDay = () => {
   const formattedDate = `${dayOfWeek}, ${dayOfMonth} de ${month} de ${year}`;
 
   return (
-    <div>
-      <h2>Mi día</h2>
-      <p>{formattedDate}</p>
-    </div>
+    <MyDayWrapper>
+      <Title>Mi día</Title>
+      <DateText>{formattedDate}</DateText>
+    </MyDayWrapper>
   );
 };
 

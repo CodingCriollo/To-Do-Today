@@ -1,8 +1,22 @@
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 import { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import TaskItem from './TaskItem';
 //import '../styles/TaskList.css';
+
+const ListWrapper = styled.div`
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.479) 0px 3px 8px;
+`;
+
+const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+`;
 
 const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
   const [prevTasks, setPrevTasks] = useState(tasks);
@@ -15,20 +29,23 @@ const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
   }, [tasks]);
 
   return (
-    <div>
-      <h2>Lista de Tareas</h2>
-      <ul>
-        {/* Mapeo de las tareas y renderización de componentes TaskItem */}
-        {tasks.map((task) => (
-          <TaskItem
-            key={task.id} // Propiedad clave única para identificar elementos en la lista
-            task={task} // Propiedad que pasa la tarea al componente TaskItem
-            onTaskComplete={onTaskComplete} // Función para manejar la tarea completada
-            onTaskDelete={onTaskDelete} // Función para manejar la eliminación de la tarea
-          />
-        ))}
-      </ul>
-    </div>
+    <>
+      {tasks.length > 0 && (
+        <ListWrapper>
+          <List>
+            {/* Mapeo de las tareas y renderización de componentes TaskItem */}
+            {tasks.map((task) => (
+              <TaskItem
+                key={task.id}
+                task={task}
+                onTaskComplete={onTaskComplete}
+                onTaskDelete={onTaskDelete}
+              />
+            ))}
+          </List>
+        </ListWrapper>
+      )}
+    </>
   );
 };
 

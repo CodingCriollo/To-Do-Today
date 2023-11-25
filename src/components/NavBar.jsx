@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import '../../src/App.css';
 
 const bgColor = '#352f44';
 
@@ -23,9 +24,15 @@ const Logo = styled.li`
   cursor: pointer;
 `;
 
-const Title = styled.li`
-  margin: 0;
+const Title = styled.h1`
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const MenuButton = styled.li`
@@ -64,9 +71,13 @@ const MenuList = styled.ul`
 `;
 
 const MenuListItem = styled.li`
-  width: 50%;
+  width: 85%;
   text-align: center;
   padding: 0.625rem;
+  margin: 0.5rem;
+  border: 2px solid #331d2c;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #5c5470;
   cursor: pointer;
 `;
@@ -86,12 +97,15 @@ const NavBar = () => {
         <NavList>
           <Logo>
             <a>
-              <img src="src/assets/imgs/logo.png" alt="Logo To Do" />
+              <img
+                width="48"
+                height="48"
+                src="https://img.icons8.com/emoji/48/check-mark-emoji.png"
+                alt="check-mark-emoji"
+              />
             </a>
           </Logo>
-          <Title>
-            <h1>TO DO TODAY</h1>
-          </Title>
+          <Title>To do Today</Title>
           <MenuButton onClick={toggleMenu}>
             <a>
               <img src="src/assets/imgs/menu-button.svg" alt="Menu Button" />
