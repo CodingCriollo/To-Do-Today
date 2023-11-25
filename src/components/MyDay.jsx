@@ -1,3 +1,5 @@
+import '../styles/MyDay.css';
+
 const MyDay = () => {
   const date = new Date();
 

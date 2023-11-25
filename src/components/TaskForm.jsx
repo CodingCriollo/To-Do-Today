@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 import { useState } from 'react';
+import '../styles/TaskForm.css';
 
 const TaskForm = ({ onAddTask }) => {
   const [newTask, setNewTask] = useState('');

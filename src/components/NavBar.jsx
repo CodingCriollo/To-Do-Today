@@ -46,7 +46,6 @@ const Menu = styled.div`
   background-color: ${bgColor};
   max-height: ${(props) => (props.isOpen ? '100vh' : '0')};
   overflow: hidden;
-  background-color: ${bgColor};
   transform: translateX(${(props) => (props.isOpen ? '0' : '100%')});
   transition: transform 0.3s ease-out, max-height 0.3s ease-out;
 
@@ -54,6 +53,7 @@ const Menu = styled.div`
     width: 100vw;
   }
 `;
+
 
 const MenuList = styled.ul`
   display: flex;
@@ -70,6 +70,8 @@ const MenuListItem = styled.li`
   background-color: #5c5470;
   cursor: pointer;
 `;
+
+// ... (código anterior)
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);

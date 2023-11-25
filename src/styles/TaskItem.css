@@ -1,0 +1,45 @@
+/* Estilos para el contenedor principal del ítem de tarea */
+div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para el texto de la tarea */
+  span {
+    flex-grow: 1;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos para el botón de completar tarea */
+  button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Estilos para el botón de eliminar tarea */
+  button.delete {
+    background-color: #dc3545;
+    margin-left: 10px;
+  }
+  
+  /* Cambia el color de fondo del botón al pasar el ratón sobre él */
+  button:hover {
+    background-color: #218838;
+  }
+  
+  /* Cambia el color de fondo del botón de eliminar al pasar el ratón sobre él */
+  button.delete:hover {
+    background-color: #c82333;
+  }
+  

@@ -11,7 +11,7 @@
 /* Las adaptamos al modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --negro: #ececec;
+    --negro: #e7e7e7;
   }
 }
 
@@ -162,3 +162,4 @@ body {
   /* opcional */
   -moz-osx-font-smoothing: grayscale;
 }
+

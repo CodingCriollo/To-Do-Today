@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 import { useState, useEffect } from 'react';
 import TaskItem from './TaskItem';
+//import '../styles/TaskList.css';
 
 const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
   const [prevTasks, setPrevTasks] = useState(tasks);

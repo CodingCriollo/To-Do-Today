@@ -1,0 +1,41 @@
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  /* Etiqueta del input */
+  label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Input */
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Botón */
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilos adicionales */
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:disabled {
+    background-color: #a9a9a9;
+    cursor: not-allowed;
+  }
+  

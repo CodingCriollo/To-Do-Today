@@ -3,35 +3,31 @@ import './reset.css';
 import { useState } from 'react';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
-import NavBar from './components/Navbar';
+import NavBar from './components/NavBar';
 import MyDay from './components/MyDay';
 
 function App() {
   // Almacena lista de tareas
   const [tasks, setTasks] = useState([]);
 
-  // Maneja tarea completada
+  // Actualiza el estado de las tareas 
   const handleTaskComplete = (taskId) => {
-    // Lógica para marcar la tarea como completada
-    // Actualiza el estado de las tareas
+    // Marca la tarea como completada
     const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, completed: !task.completed } : task
     );
     setTasks(updatedTasks);
   };
 
-  // Función para manejar la eliminación de la tarea
+  // Actualiza el estado de las tareas
   const handleTaskDelete = (taskId) => {
-    // Lógica para eliminar la tarea
-    // Actualiza el estado de las tareas
+    // Eliminar la tarea
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(updatedTasks);
   };
 
-  // Función para agregar una nueva tarea
+  // Agregar una nueva tarea
   const handleAddTask = (newTaskText) => {
-    // Agrega nueva tarea
-    // Actualiza tareas
     const newTask = {
       id: tasks.length + 1,
       text: newTaskText,

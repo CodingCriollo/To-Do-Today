@@ -1,0 +1,22 @@
+/* Contenedor principal */
+div {
+    background-color: #252422;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  /* Título */
+  h2 {
+    color: #333;
+  }
+  
+  /* Fechas */
+  p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
