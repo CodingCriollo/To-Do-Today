@@ -5,10 +5,13 @@ const MyDayWrapper = styled.div`
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  margin: 20px;
+  margin: 1.5rem;
 `;
 
 const Title = styled.h2`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   color: #ff9130;
   margin-bottom: 5px;
@@ -48,7 +51,12 @@ const MyDay = () => {
 
   return (
     <MyDayWrapper>
-      <Title>Mi día</Title>
+      <Title>
+        Mi día
+        <div>
+          <img width="48px" height="48px" src="src/assets/imgs/sun.svg" alt="Sun"></img>
+        </div>
+      </Title>
       <DateText>{formattedDate}</DateText>
     </MyDayWrapper>
   );

@@ -14,7 +14,7 @@ const ItemWrapper = styled.div`
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 468px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -26,14 +26,14 @@ const TaskText = styled.span`
   color: ${(props) => (props.completed ? '#888' : '#fff')};
   margin-bottom: 10px;
   flex-grow: 1;
-  @media (min-width: 768px) {
+  @media (min-width: 468px) {
     margin-bottom: 0;
     margin-right: 10px;
   }
 `;
 
-const ActionButton = styled.button`
-  background-color: ${(props) => (props.complete ? '#2ecc71' : '#e74c3c')};
+const CompleteButton = styled.button`
+  background-color: ${(props) => (props.complete ? '#c0392b' : '#2ecc71')};
   color: #fff;
   width: 90%;
   padding: 5px 10px;
@@ -44,22 +44,29 @@ const ActionButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: ${(props) => (props.complete ? '#27ae60' : '#c0392b')};
+    background-color: ${(props) => (props.complete ? '#8f3126' : '#279957')};
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 468px) {
     width: auto;
     margin-top: 0;
   }
 `;
 
+const RemoveButton = styled(CompleteButton)`
+  background-color: #333;
+
+  &:hover {
+    background-color: #c0392b;
+  }
+`;
 const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
-  const [completed, setCompleted] = useState(false);
+  const [completed, setCompleted] = useState(task.completed);
 
   const handleComplete = () => {
     setCompleted(!completed);
-    onTaskComplete(task.id);
-    swal('¡Buen trabajo!', 'Has completado una tarea.', 'success');
+    onTaskComplete(task.id, !completed);
+    swal('¡Buen trabajo!', `Has ${completed ? 'desmarcado' : 'completado'} una tarea.`, 'success');
   };
 
   const handleDelete = () => {
@@ -70,10 +77,10 @@ const TaskItem = ({ task, onTaskComplete, onTaskDelete }) => {
   return (
     <ItemWrapper>
       <TaskText completed={completed}>{task.text}</TaskText>
-      <ActionButton complete={completed} onClick={handleComplete}>
-        Completar
-      </ActionButton>
-      <ActionButton onClick={handleDelete}>Eliminar</ActionButton>
+      <CompleteButton complete={completed} onClick={handleComplete}>
+        {completed ? 'Desmarcar' : 'Completar'}
+      </CompleteButton>
+      <RemoveButton onClick={handleDelete}>Eliminar</RemoveButton>
     </ItemWrapper>
   );
 };

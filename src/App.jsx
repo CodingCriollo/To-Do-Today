@@ -3,7 +3,7 @@ import './reset.css';
 import { useState, useEffect } from 'react';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar';
 import MyDay from './components/MyDay';
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks])
-  
+  }, [tasks]);
+
   // Maneja tarea completada
   const handleTaskComplete = (taskId) => {
     // Lógica para marcar la tarea como completada
@@ -48,12 +48,10 @@ function App() {
 
   return (
     <>
-
       <NavBar></NavBar>
       <MyDay></MyDay>
       <TaskForm onAddTask={handleAddTask} />
       <TaskList tasks={tasks} onTaskComplete={handleTaskComplete} onTaskDelete={handleTaskDelete} />
-
     </>
   );
 }

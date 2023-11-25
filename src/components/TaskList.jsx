@@ -25,7 +25,7 @@ const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
       swal('¡Cambio detectado!', 'La lista de tareas ha cambiado.', 'info');
       setPrevTasks(tasks);
     }
-  }, [tasks]);
+  }, [prevTasks.length, tasks]);
 
   return (
     <>
