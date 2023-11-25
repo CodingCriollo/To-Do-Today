@@ -3,7 +3,7 @@ import './reset.css';
 import { useState, useEffect } from 'react';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
-import NavBar from './components/Navbar';
+import NavBar from './components/NavBar';
 import MyDay from './components/MyDay';
 
 function App() {
@@ -48,10 +48,12 @@ function App() {
 
   return (
     <>
+
       <NavBar></NavBar>
       <MyDay></MyDay>
       <TaskForm onAddTask={handleAddTask} />
       <TaskList tasks={tasks} onTaskComplete={handleTaskComplete} onTaskDelete={handleTaskDelete} />
+
     </>
   );
 }
